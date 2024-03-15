@@ -11,6 +11,20 @@
 
 // crare il bottone bigbang l'inizio di tutto 
 
+document.querySelector('#play').addEventListener('click', function() {
+    document.querySelector('.grid').classList.remove('none');
+    // per 64 volte creare un quadratino e ogni quadratino
+    // lo aggiungo a grid
+    const mainGrid = document.querySelector('.grid');
+    console.log(mainGrid);
+    for(let i = 1; i <= 64; i++) {
+        const newSquare = generateSquare(i);
+        mainGrid.append(newSquare);
+        
+    }
+    difficultyLevel()
+
+  });
 
 
 
@@ -26,40 +40,37 @@ function generateSquare(number) {
     newSquare.classList.add('square');
     newSquare.innerHTML = `<span>${number}</span>`;
 
-    // Gestione del click su ogni qudrato
-    // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro
-    // ed emetto un messaggio in console con il numero della cella cliccata
+    // Gestione del click su ogni qudrato, aggiunge classe blue
     newSquare.addEventListener('click', function() {
+        
             this.classList.add('blue');
-       
+            console.log(number)
+           
     });
 
     return newSquare;
 }
 
 
-
+// ad ogni livello selezionato applica una classe differente
 function difficultyLevel() {
-    const livello = document.querySelector('#livello').value;
-    const squares = document.querySelectorAll('.square');
-  
-    
-  
-    // Applica la classe in base al livello
-    if (livello === 'facile') {
+    // richimare elementi che servono per applicare condizione 
+    const level = document.querySelector('#livello').value;
+    const squares = document.querySelectorAll('.square'); 
+
+    // Applica la classe in base al level
+    if (level === 'easy') {
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('easy');
       }
-    } else if (livello === 'difficile') {
+    } else if (level === 'hard') {
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('hard');
       }
-    } else if (livello === 'pazzo') {
+    } else if (level === 'crazy') {
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('crazy');
       }
-    } else {
-      console.warn("Livello di difficoltà non valido selezionato.");
-    }
+    } 
   }
  
