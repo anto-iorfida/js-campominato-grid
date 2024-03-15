@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    background-color: pink;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.square {
+    background-color: cadetblue;
+    border: 2px solid black;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+.hard{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.crazy{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.none{
+    display: none;
+}
+
+.square.even {
+    background-color: red;
+}
+.square.odd {
+    background-color: green;
+}
+
+.blue{
+    background-color:cornflowerblue;
+}
