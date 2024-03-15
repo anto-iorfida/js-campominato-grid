@@ -13,16 +13,9 @@
 
 document.querySelector('#play').addEventListener('click', function() {
     document.querySelector('.grid').classList.remove('none');
-    // per 64 volte creare un quadratino e ogni quadratino
-    // lo aggiungo a grid
-    const mainGrid = document.querySelector('.grid');
-    console.log(mainGrid);
-    for(let i = 1; i <= 64; i++) {
-        const newSquare = generateSquare(i);
-        mainGrid.append(newSquare);
-        
-    }
-    difficultyLevel()
+   
+    difficultyLevelGrid();
+    difficultyLevel();
 
   });
 
@@ -51,8 +44,41 @@ function generateSquare(number) {
     return newSquare;
 }
 
+// generare funzione che ad ogni livello cambia il numero di quadrati
+function difficultyLevelGrid() {
+    // richiamare elementi che servono per la condizione 
+    const level = document.querySelector('#livello').value;
+    const mainGrid = document.querySelector('.grid');
+    console.log(mainGrid);
+    // aumenta i quadrati in base al level
+    if (level === 'easy') {
 
-// ad ogni livello selezionato applica una classe differente
+      for(let i = 1; i <= 100; i++) {
+          const newSquare = generateSquare(i);
+          mainGrid.append(newSquare);
+      }
+
+      } else if (level === 'hard') {
+
+      for(let i = 1; i <= 81; i++) {
+           const newSquare = generateSquare(i);
+           mainGrid.append(newSquare);
+      }
+    
+
+      } else if (level === 'crazy') {
+
+      for(let i = 1; i <= 49; i++) {
+          const newSquare = generateSquare(i);
+          mainGrid.append(newSquare);
+           
+      }
+
+      } 
+    
+}
+
+// generare funzione che ad ogni livello selezionato applica una classe differente
 function difficultyLevel() {
     // richimare elementi che servono per applicare condizione 
     const level = document.querySelector('#livello').value;
@@ -60,17 +86,23 @@ function difficultyLevel() {
 
     // Applica la classe in base al level
     if (level === 'easy') {
+
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('easy');
       }
+
     } else if (level === 'hard') {
+
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('hard');
       }
+
     } else if (level === 'crazy') {
+        
       for (let i = 0; i < squares.length; i++) {
         squares[i].classList.add('crazy');
       }
+
     } 
   }
  

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+header{
+    padding: 20px;
+}
+
 .grid {
     width: 800px;
     height: 400px;
