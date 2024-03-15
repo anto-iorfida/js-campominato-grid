@@ -3,23 +3,71 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: lightslategray;
+}
+
+/* --------------
+    HEADER
+-----------------*/
 
 header{
     padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    background-color: rgba(171, 156, 156, 0.582);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
 }
 
+header img {
+    width: 60px;
+    height: 70px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-image: none;
+    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comand *{
+    margin: 10px;
+}
+
+#livello{
+    border-radius: 10px;
+    padding: 4px 6px;
+}
+
+#play{
+    padding: 6px  10px;
+    border-radius: 160px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+/* --------------
+    MAIN
+-----------------*/
+
+
 .grid {
-    width: 800px;
+    max-width: 800px;
     height: 400px;
     background-color: pink;
-    margin: 50px auto;
+    margin: 70px auto;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }
 
 .square {
-    background-color: cadetblue;
+    background-color: lightgray;
     border: 2px solid black;
     font-size: 30px;
     display: flex;
@@ -27,6 +75,11 @@ header{
     align-items: center;
     
 }
+
+/* --------------
+    JS UTLILITY
+-----------------*/
+
 
 .easy{
     width: calc(100% / 10);
@@ -45,12 +98,6 @@ header{
     display: none;
 }
 
-.square.even {
-    background-color: red;
-}
-.square.odd {
-    background-color: green;
-}
 
 .blue{
     background-color:cornflowerblue;
