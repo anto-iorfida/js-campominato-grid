@@ -11,7 +11,10 @@
 
 // crare il bottone bigbang l'inizio di tutto 
 
+const mainGrid = document.querySelector('.grid');
 document.querySelector('#play').addEventListener('click', function() {
+
+    mainGrid.innerHTML = "";
     document.querySelector('.grid').classList.remove('none');
    
     difficultyLevelGrid();
@@ -37,7 +40,7 @@ function generateSquare(number) {
     newSquare.addEventListener('click', function() {
         
             this.classList.add('blue');
-            console.log(number)
+            console.log('hai cliccato il', number)
            
     });
 
@@ -49,7 +52,7 @@ function difficultyLevelGrid() {
     // richiamare elementi che servono per la condizione 
     const level = document.querySelector('#livello').value;
     const mainGrid = document.querySelector('.grid');
-    console.log(mainGrid);
+    
     // aumenta i quadrati in base al level
     if (level === 'easy') {
 
@@ -78,7 +81,7 @@ function difficultyLevelGrid() {
     
 }
 
-// generare funzione che ad ogni livello selezionato applica una classe differente
+// generare funzione che ad ogni livello selezionato applica una classe differente hai 
 function difficultyLevel() {
     // richimare elementi che servono per applicare condizione 
     const level = document.querySelector('#livello').value;
